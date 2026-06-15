@@ -5,6 +5,7 @@ import Signup from "./pages/auth/Signup";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import CheckEmail from "./pages/auth/CheckEmail";
 import ResetPassword from "./pages/auth/ResetPassword";
+import JobFeed from "./pages/candidate/JobFeed";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/check-email" element={<CheckEmail />} />
           <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/candidate/jobs" element={<JobFeed />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
