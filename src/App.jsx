@@ -5,7 +5,8 @@ import Signup from "./pages/auth/Signup";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import CheckEmail from "./pages/auth/CheckEmail";
 import ResetPassword from "./pages/auth/ResetPassword";
-import JobFeed from "./pages/candidate/JobFeed";
+import JobFeed from "./components/candidate/JobFeed";
+import JobDetail from "./pages/candidate/JobDetail";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/check-email" element={<CheckEmail />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/candidate/jobs" element={<JobFeed />} />
+          <Route path="/candidate/jobs/:id" element={<JobDetail />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
