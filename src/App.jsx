@@ -7,6 +7,8 @@ import CheckEmail from "./pages/auth/CheckEmail";
 import ResetPassword from "./pages/auth/ResetPassword";
 import JobFeed from "./pages/candidate/JobFeed";
 import JobDetail from "./pages/candidate/JobDetail";
+import MyApplications from "./pages/candidate/MyApplications";
+import SavedJobs from "./pages/candidate/SavedJobs";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/candidate/jobs" element={<JobFeed />} />
           <Route path="/candidate/jobs/:id" element={<JobDetail />} />
+          <Route path="/candidate/applications" element={<MyApplications />} />
+          <Route path="/candidate/saved" element={<SavedJobs />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
