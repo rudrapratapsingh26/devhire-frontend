@@ -5,7 +5,7 @@ import Signup from "./pages/auth/Signup";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import CheckEmail from "./pages/auth/CheckEmail";
 import ResetPassword from "./pages/auth/ResetPassword";
-import JobFeed from "./components/candidate/JobFeed";
+import JobFeed from "./pages/candidate/JobFeed";
 import JobDetail from "./pages/candidate/JobDetail";
 
 function App() {
