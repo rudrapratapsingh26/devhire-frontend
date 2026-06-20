@@ -16,11 +16,12 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const register = async (username, email, password) => {
+  const register = async ({ fullName, email, password, role }) => {
     const response = await api.post("/auth/register", {
-      username,
+      fullName,
       email,
       password,
+      role,
     });
     return response.data;
   };
@@ -35,14 +36,47 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    await api.post("/auth/logout");
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("user");
-    setUser(null);
+    try {
+      await api.post("/auth/logout");
+    } finally {
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("user");
+      setUser(null);
+    }
+  };
+
+  const forgotPassword = async (email) => {
+    const response = await api.post("/auth/forgot-password", { email });
+    return response.data;
+  };
+
+  const resetPassword = async (token, password) => {
+    const response = await api.post("/auth/reset-password", {
+      token,
+      password,
+    });
+    return response.data;
+  };
+
+  const loginWithGoogle = () => {
+    const baseURL =
+      import.meta.env.VITE_API_URL || "http://localhost:8000/api/v1";
+    window.location.href = `${baseURL}/auth/google`;
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, register, login, logout }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        loading,
+        register,
+        login,
+        logout,
+        forgotPassword,
+        resetPassword,
+        loginWithGoogle,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
