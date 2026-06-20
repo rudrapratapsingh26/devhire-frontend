@@ -4,7 +4,7 @@ const AuthLayout = ({ children }) => {
   return (
     <div className="relative min-h-screen bg-bg overflow-hidden">
       {/* Ambient glow */}
-      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-accent/20 blur-[120px]" />
+      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 h-150 w-150 rounded-full bg-accent/20 blur-[120px]" />
 
       {/* Logo */}
       <div className="relative z-10 flex items-center gap-3 px-6 sm:px-10 pt-8">
