@@ -49,6 +49,7 @@ const Login = () => {
         </p>
       </div>
 
+      {/* Google button OUTSIDE the form */}
       <GoogleButton onClick={loginWithGoogle} />
 
       <div className="my-5">
@@ -61,6 +62,7 @@ const Login = () => {
         </div>
       )}
 
+      {/* Form only contains email/password fields */}
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <Input
           label="Email address"
@@ -98,7 +100,10 @@ const Login = () => {
 
       <p className="mt-6 text-center text-sm text-zinc-400">
         Don't have an account?{" "}
-        <Link to="/signup" className="font-medium text-accent hover:text-violet-400">
+        <Link
+          to="/signup"
+          className="font-medium text-accent hover:text-violet-400"
+        >
           Sign up
         </Link>
       </p>

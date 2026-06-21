@@ -48,6 +48,7 @@ const Signup = () => {
         </p>
       </div>
 
+      {/* Google button OUTSIDE the form */}
       <GoogleButton onClick={loginWithGoogle} />
 
       <div className="my-5">
@@ -102,7 +103,10 @@ const Signup = () => {
 
       <p className="mt-6 text-center text-sm text-zinc-400">
         Already have an account?{" "}
-        <Link to="/login" className="font-medium text-accent hover:text-violet-400">
+        <Link
+          to="/login"
+          className="font-medium text-accent hover:text-violet-400"
+        >
           Sign in
         </Link>
       </p>
