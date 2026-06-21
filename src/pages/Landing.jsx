@@ -44,7 +44,7 @@ const Landing = () => {
 
       {/* Hero */}
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[500px] w-[700px] rounded-full bg-accent/15 blur-[120px]" />
+        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-125 w-175 rounded-full bg-accent/15 blur-[120px]" />
         <div className="relative mx-auto max-w-4xl px-8 py-24 text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm text-violet-300">
             <Sparkles size={14} />
