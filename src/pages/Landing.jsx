@@ -13,23 +13,23 @@ const Landing = () => {
           <span className="font-bold text-white">DevHire</span>
         </div>
         <div className="hidden items-center gap-8 md:flex">
-          <a href="#" className="text-sm text-zinc-400 hover:text-white">
+          <Link
+            to="/signup"
+            className="text-sm text-zinc-400 hover:text-white transition"
+          >
             For Candidates
-          </a>
-          <a href="#" className="text-sm text-zinc-400 hover:text-white">
+          </Link>
+          <Link
+            to="/signup"
+            className="text-sm text-zinc-400 hover:text-white transition"
+          >
             For Companies
-          </a>
-          <a href="#" className="text-sm text-zinc-400 hover:text-white">
-            Pricing
-          </a>
-          <a href="#" className="text-sm text-zinc-400 hover:text-white">
-            Blog
-          </a>
+          </Link>
         </div>
         <div className="flex items-center gap-3">
           <Link
             to="/login"
-            className="text-sm font-medium text-zinc-300 hover:text-white"
+            className="text-sm font-medium text-zinc-300 hover:text-white transition"
           >
             Log In
           </Link>
@@ -150,15 +150,24 @@ const Landing = () => {
             </span>
           </div>
           <div className="flex gap-6">
-            <a href="#" className="text-sm text-zinc-500 hover:text-white">
-              Privacy
-            </a>
-            <a href="#" className="text-sm text-zinc-500 hover:text-white">
-              Terms
-            </a>
-            <a href="#" className="text-sm text-zinc-500 hover:text-white">
-              Contact
-            </a>
+            <Link
+              to="/signup"
+              className="text-sm text-zinc-500 hover:text-white transition"
+            >
+              For Candidates
+            </Link>
+            <Link
+              to="/signup"
+              className="text-sm text-zinc-500 hover:text-white transition"
+            >
+              For Companies
+            </Link>
+            <Link
+              to="/login"
+              className="text-sm text-zinc-500 hover:text-white transition"
+            >
+              Login
+            </Link>
           </div>
         </div>
       </footer>
