@@ -34,6 +34,8 @@ import AdminCompanies from "./pages/admin/AdminCompanies";
 import AdminCandidates from "./pages/admin/AdminCandidates";
 import AdminJobs from "./pages/admin/AdminJobs";
 
+import GoogleSuccess from "./pages/auth/GoogleSuccess";
+
 function App() {
   return (
     <AuthProvider>
@@ -180,6 +182,8 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route path="/auth/google/success" element={<GoogleSuccess />} />
 
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
