@@ -4,10 +4,10 @@ import CandidateLayout from "../../layouts/CandidateLayout";
 import api from "../../utils/axios";
 
 const statusStyles = {
-  Applied: "bg-blue-500/15 text-blue-400",
-  Reviewing: "bg-amber-500/15 text-amber-400",
-  Accepted: "bg-emerald-500/15 text-emerald-400",
-  Rejected: "bg-red-500/15 text-red-400",
+  APPLIED: "bg-blue-500/15 text-blue-400",
+  REVIEWING: "bg-amber-500/15 text-amber-400",
+  ACCEPTED: "bg-emerald-500/15 text-emerald-400",
+  REJECTED: "bg-red-500/15 text-red-400",
 };
 
 const scoreColor = (score) => {
@@ -27,7 +27,7 @@ const MyApplications = () => {
     setLoading(true);
     try {
       const res = await api.get("/applications/my");
-      setApplications(res.data.data.applications || []);
+      setApplications(res.data.data || []);
     } catch (err) {
       console.error("Failed to fetch applications", err);
     } finally {
@@ -41,10 +41,10 @@ const MyApplications = () => {
 
   const counts = {
     Total: applications.length,
-    Applied: applications.filter((a) => a.status === "Applied").length,
-    Reviewing: applications.filter((a) => a.status === "Reviewing").length,
-    Accepted: applications.filter((a) => a.status === "Accepted").length,
-    Rejected: applications.filter((a) => a.status === "Rejected").length,
+    APPLIED: applications.filter((a) => a.status === "APPLIED").length,
+    REVIEWING: applications.filter((a) => a.status === "REVIEWING").length,
+    ACCEPTED: applications.filter((a) => a.status === "ACCEPTED").length,
+    REJECTED: applications.filter((a) => a.status === "REJECTED").length,
   };
 
   const filtered = applications
@@ -143,7 +143,7 @@ const MyApplications = () => {
                     {app.job?.company?.name}
                   </td>
                   <td className="px-5 py-4 text-zinc-400">
-                    {new Date(app.createdAt).toLocaleDateString("en-US", {
+                    {new Date(app.appliedAt).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
                       year: "numeric",
