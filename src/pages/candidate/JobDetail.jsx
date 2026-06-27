@@ -26,7 +26,7 @@ const JobDetail = () => {
     setLoading(true);
     try {
       const res = await api.get(`/jobs/${id}`);
-      setJob(res.data.data.job);
+      setJob(res.data.data);
     } catch (err) {
       setError("This job couldn't be found, it may have been removed.");
     } finally {
@@ -37,7 +37,7 @@ const JobDetail = () => {
   const checkApplicationStatus = async () => {
     try {
       const res = await api.get("/applications/my");
-      const applications = res.data.data.applications || [];
+      const applications = res.data.data || [];
       setApplied(applications.some((app) => app.jobId === id));
     } catch (err) {
       console.error("Failed to check application status", err);
@@ -47,7 +47,7 @@ const JobDetail = () => {
   const checkBookmarkStatus = async () => {
     try {
       const res = await api.get("/bookmarks");
-      const bookmarks = res.data.data.bookmarks || [];
+      const bookmarks = res.data.data || [];
       setIsSaved(bookmarks.some((b) => b.jobId === id));
     } catch (err) {
       console.error("Failed to check bookmark status", err);
