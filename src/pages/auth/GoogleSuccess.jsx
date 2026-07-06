@@ -15,11 +15,13 @@ const GoogleSuccess = () => {
 
   useEffect(() => {
     const accessToken = searchParams.get("accessToken");
+    const refreshToken = searchParams.get("refreshToken");
     const userStr = searchParams.get("user");
 
-    if (accessToken && userStr) {
+    if (accessToken && refreshToken && userStr) {
       const user = JSON.parse(decodeURIComponent(userStr));
       localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("refreshToken", refreshToken);
       localStorage.setItem("user", JSON.stringify(user));
       window.location.href = roleRedirects[user.role] || "/";
     } else {
